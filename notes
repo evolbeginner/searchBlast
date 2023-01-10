@@ -1,0 +1,2 @@
+ruby searchInBatch.rb #usage
+ruby searchInBatch.rb --outdir blast/ --indir protein/ --cpu 8 --force --cog_rbp #example
