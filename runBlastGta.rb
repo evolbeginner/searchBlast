@@ -24,7 +24,7 @@ infiles = Array.new
 
 ###############################################################################
 opts = GetoptLong.new(
-  ['--indir', GetoptLong::REQUIRED_ARGUMENT],
+  ['--indir', '--protein_indir', GetoptLong::REQUIRED_ARGUMENT],
   ['--query_indir', GetoptLong::REQUIRED_ARGUMENT],
   ['-e', '--evalue', GetoptLong::REQUIRED_ARGUMENT],
   ['--prog', '--type', GetoptLong::REQUIRED_ARGUMENT],
@@ -36,7 +36,7 @@ opts = GetoptLong.new(
 
 opts.each do |opt, value|
   case opt
-    when '--indir'
+    when '--indir', '--protein_indir'
       indir = value
     when '--query_indir'
       query_indir = value

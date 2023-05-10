@@ -72,7 +72,7 @@ if __FILE__ == $0; then
     ['-i', GetoptLong::REQUIRED_ARGUMENT],
     ['--cpu', GetoptLong::REQUIRED_ARGUMENT],
     ['--fam_list', GetoptLong::REQUIRED_ARGUMENT],
-    ['--pssm', GetoptLong::OPTIONAL_ARGUMENT],
+    ['--pssm', '--db', GetoptLong::OPTIONAL_ARGUMENT],
     ['--psi_db_name', GetoptLong::REQUIRED_ARGUMENT],
     ['--diamond', GetoptLong::REQUIRED_ARGUMENT],
     ['--outdir', GetoptLong::REQUIRED_ARGUMENT],
@@ -88,7 +88,7 @@ if __FILE__ == $0; then
         cpu = value.to_i
       when '--fam_list'
         fam_list_file = value
-      when '--pssm'
+      when '--pssm', '--db'
         is_pssm = true
         psi_db_name = value if not value.nil?
       when '--psi_db_name'

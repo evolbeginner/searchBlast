@@ -1,0 +1,1 @@
+../../correlTraitGene/generate_gene2ko.rb

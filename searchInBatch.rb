@@ -281,6 +281,11 @@ if __FILE__ == $0
     end
   end
 
+  if $thread * cpu >= 32
+    STDERR.puts "#{$thread} * #{cpu} too large! Exiting ......"
+    exit 1
+  end
+
 
   ######################################################
   indirs.flatten!

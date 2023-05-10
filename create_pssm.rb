@@ -11,6 +11,7 @@ $: << DIR
 require 'getoptlong'
 
 require 'retrieve_kegg_seq'
+require 'util'
 
 
 ###########################################################
@@ -83,4 +84,16 @@ if __FILE__ == $0; then
 
   makeprofiledb(pssm_outdir, psi_outdir, psi_db_name)
 
+def output_fam_list(infiles, outdir)
+  out_fh = File.open(File.join(outdir, 'fam.list'), 'w')
+  infiles.each do |infile|
+    c = getCorename(infile)
+    out_fh.puts [c, c].join("\t")
+  end
+  out_fh.close
 end
+  output_fam_list(infiles, psi_outdir)
+
+end
+
+
